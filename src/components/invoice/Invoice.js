@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import LineItem from '../LineItem.js';
+
 import data from '../../invoiceDB.json';
 import './Invoice.css';
 
@@ -6,19 +9,21 @@ class Invoice extends React.Component {
 
   makeListItems (){
     return data.map((listItem) =>
-    <li key={listItem.id} className="invoice-list-item">
-      <h3>{listItem.title}</h3>
-      <ul className="invoice-line-item-list">
-       {listItem.lineItems.map((lineItem) => 
-       <li key={lineItem.itemNo}>
-         <ul className="invoice-line-item">
-           <li>{lineItem.title}</li>
-           <li>{lineItem.amount}</li>
-           <li>{lineItem.notes}</li>
-         </ul>
-       </li> )}
-      </ul>
-    </li>);
+      <li key={listItem.id} className="invoice-list-item">
+        <h3>{listItem.title}</h3>
+        <table className="line-item-table">
+          <thead>
+            <tr>
+              <td>Item</td>
+              <td>Amount</td>
+              <td>Notes</td>
+            </tr>
+          </thead>
+          <tbody>
+          <LineItem lineItem={listItem.lineItems}/>
+          </tbody>
+        </table> 
+      </li>);
   }
 
   render () {

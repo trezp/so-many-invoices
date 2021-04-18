@@ -4,7 +4,23 @@ ul {
 ul li {
   list-style-type: none;
 }
+table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+thead tr {
+  background: lightgray;
+}
+th, tr, td {
+  border: 1px solid gray;
+  padding: 15px;
+  width: 33%;
+}
 
 .invoice-line-item {
-  display: flex;
+  display: table;
+  
 }
