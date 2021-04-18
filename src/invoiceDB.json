@@ -1,29 +1,33 @@
-[{
-  "id": 1,
-  "title": "Invoice 1",
-  "status": "outstanding",
-  "lineItems": [{
-    "itemNo": 1,
-    "title": "Materials",
-    "amount": 50,
-    "notes": "This is a note"
-  }]
-},
-{
-  "id": 2,
-  "title": "Invoice 2",
-  "status": "overdue",
-  "lineItems": [{
+[
+  {
+    "id": "1",
+    "title": "Invoice 1",
+    "link": "invoice-1",
+    "status": "outstanding",
+    "lineItems": [{
       "itemNo": 1,
-      "title": "Labor",
-      "amount": 500,
-      "notes": "Please send payment via Venmo or PayPal"
-    },
-    {
-      "itemNo": 2,
       "title": "Materials",
-      "amount": 23000,
-      "notes": "Includes 500 gold bars"
-    }
-  ]
-}]
+      "amount": 50,
+      "notes": "This is a note"
+    }]
+  },
+  {
+    "id": "2",
+    "title": "Invoice 2",
+    "link": "invoice-2",
+    "status": "overdue",
+    "lineItems": [{
+        "itemNo": 1,
+        "title": "Labor",
+        "amount": 500,
+        "notes": "Please send payment via Venmo or PayPal"
+      },
+      {
+        "itemNo": 2,
+        "title": "Materials",
+        "amount": 23000,
+        "notes": "Includes 500 gold bars"
+      }
+    ]
+  }
+]

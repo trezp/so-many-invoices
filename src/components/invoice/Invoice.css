@@ -21,6 +21,5 @@ th, tr, td {
 }
 
 .invoice-line-item {
-  display: table;
-  
+  display: table; 
 }
