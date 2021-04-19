@@ -17,7 +17,7 @@ thead tr {
 th, tr, td {
   border: 1px solid gray;
   padding: 15px;
-  width: 33%;
+  width: 25%;
 }
 
 .invoice-line-item {

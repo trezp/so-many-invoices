@@ -3,6 +3,8 @@
     "id": "1",
     "title": "Invoice 1",
     "link": "invoice-1",
+    "created": "March 30, 2021",
+    "due": "May 1, 2021",
     "status": "outstanding",
     "lineItems": [{
       "itemNo": 1,
@@ -15,6 +17,8 @@
     "id": "2",
     "title": "Invoice 2",
     "link": "invoice-2",
+    "created": "April 11, 2021",
+    "due": "May 10, 2021",
     "status": "overdue",
     "lineItems": [{
         "itemNo": 1,
@@ -27,6 +31,33 @@
         "title": "Materials",
         "amount": 23000,
         "notes": "Includes 500 gold bars"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Invoice 3",
+    "link": "invoice-3",
+    "created": "Feb 30, 2021",
+    "due": "March 15, 2021",
+    "status": "overdue",
+    "lineItems": [{
+        "itemNo": 1,
+        "title": "Labor",
+        "amount": 500,
+        "notes": "Please send payment via Venmo or PayPal"
+      },
+      {
+        "itemNo": 2,
+        "title": "Materials",
+        "amount": 23000,
+        "notes": "Includes 500 gold bars"
+      },
+      {
+        "itemNo": 3,
+        "title": "Cats",
+        "amount": 10,
+        "notes": "Please deliver a corresponding number of litter boxes"
       }
     ]
   }

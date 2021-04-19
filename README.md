@@ -1,8 +1,8 @@
 ## Notes 
 -- Landing page
-  -- Lists invoices 
+  <!-- -- Lists invoices  -->
   -- Add an invoice 
-  -- Create an invoive
+  -- Create an invoice
   -- Send invoice
   -- View invoice status 
 
@@ -12,8 +12,8 @@
 
 ## Plan 
 <!-- -- Create data structure -->
--- Create landing page 
--- Create invoice component 
--- Display a list of invoices 
--- Select and view invoice
+<!-- -- Create landing page  -->
+<!-- -- Create invoice component 
+-- Display a list of invoices  -->
+<!-- -- Select and view invoice -->
 -- Add line item
