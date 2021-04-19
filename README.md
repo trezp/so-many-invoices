@@ -1,19 +1,19 @@
-## Notes 
--- Landing page
-  <!-- -- Lists invoices  -->
-  -- Add an invoice 
-  -- Create an invoice
-  -- Send invoice
-  -- View invoice status 
+The first in my collection of coding interview take home assignments 
 
--- Invoice
-  -- Add line items
-    -- Line item title, amount, notes
+## To Run 
 
-## Plan 
-<!-- -- Create data structure -->
-<!-- -- Create landing page  -->
-<!-- -- Create invoice component 
--- Display a list of invoices  -->
-<!-- -- Select and view invoice -->
--- Add line item
+Clone the repo, 
+```
+npm install 
+```
+
+
+and then
+
+
+
+
+
+```
+npm start
+```
