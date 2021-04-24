@@ -43,7 +43,6 @@ function App() {
 
   const handleClick = (e, invoice) => {
     e.preventDefault();
-    console.log("deleted?")
     removeInvoice(invoice);
   }
 

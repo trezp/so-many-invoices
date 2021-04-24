@@ -4,8 +4,8 @@ import uniqueId from 'uniqid';
 function InvoiceForm({addInvoice}) {
 
   const [invoice, setInvoice] = useState({
-    id: uniqueId(),
-    title: "",
+    id: '',
+    title: '',
     created: "April 11, 2021",
     due: "May 10, 2021",
     status: "current",
@@ -20,6 +20,15 @@ function InvoiceForm({addInvoice}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addInvoice(invoice);
+    setInvoice({
+      id: '',
+      title: '',
+      created: "April 11, 2021",
+      due: "May 10, 2021",
+      status: "current",
+      lineItems: []
+    });
+
   };
 
   return (
