@@ -36,7 +36,6 @@ function Invoice () {
           </tr>
         </tbody>
       </table> 
-
     </li>);
 }
 

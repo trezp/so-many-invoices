@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import uniqueId from 'uniqid';
 
 function InvoiceForm({addInvoice}) {
 
   const [invoice, setInvoice] = useState({
-    id: "",
+    id: uniqueId(),
     title: "",
     created: "April 11, 2021",
     due: "May 10, 2021",
@@ -13,8 +14,7 @@ function InvoiceForm({addInvoice}) {
 
   const handleInputChange = (e) => {
     e.preventDefault();
-    const invoiceId = String(JSON.parse(localStorage.getItem('invoices')).length + 1);
-    setInvoice({...invoice, title: e.target.value, id: invoiceId});
+    setInvoice({...invoice, title: e.target.value, id: uniqueId()});
   }
 
   const handleSubmit = (e) => {

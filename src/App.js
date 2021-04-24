@@ -21,13 +21,13 @@ function App() {
   const [invoices, setInvoices] = useState(initialState);
   
   const addInvoice = (invoice) => {
-    // assuming no duplicates for demo purposes
+     // assuming no duplicates for demo purposes
     setInvoices([...invoices, invoice]);
   };
 
-  // const removeItem = (itemToBeDeleted) => {
-  //   setItems(items.filter((item) => itemToBeDeleted !== item));
-  // };
+  const removeInvoice = (invoiceToBeDeleted) => {
+    setInvoices(invoices.filter((invoice) => invoiceToBeDeleted !== invoice));
+  };
 
   useEffect(() => {
     const invoices = JSON.parse(localStorage.getItem('invoices'));
@@ -41,6 +41,12 @@ function App() {
     localStorage.setItem('invoices', JSON.stringify(invoices));
   }, [invoices]);
 
+  const handleClick = (e, invoice) => {
+    e.preventDefault();
+    console.log("deleted?")
+    removeInvoice(invoice);
+  }
+
   return (
     <div className="app-container">
       <Router>
@@ -49,7 +55,10 @@ function App() {
             <h1>Super Spectacular Invoicing!</h1>
             <nav>
               <ul>
-                {invoices.map(link => <li key={link.id}><Link to={link.id}>{link.title}</Link></li>)}
+                {invoices.map(invoice => <li key={invoice.id}>
+                  <Link to={invoice.id}>{invoice.title}</Link>
+                  <button type="button" onClick={(e) => {handleClick(e,invoice)}}>X</button></li>
+                )}
               </ul>
             </nav>
           </header>
