@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import uniqueId from 'uniqid';
+import './NewInvoiceForm.css';
+
 
 function InvoiceForm({addInvoice}) {
-
   const [invoice, setInvoice] = useState({
     id: '',
     title: '',
+    desc: '',
+    amount: '',
     created: "April 11, 2021",
     due: "May 10, 2021",
     status: "current",
@@ -14,28 +17,35 @@ function InvoiceForm({addInvoice}) {
 
   const handleInputChange = (e) => {
     e.preventDefault();
-    setInvoice({...invoice, title: e.target.value, id: uniqueId()});
+    setInvoice({...invoice, [e.target.name]: e.target.value, id: uniqueId()});
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addInvoice(invoice);
+
     setInvoice({
       id: '',
       title: '',
+      desc: '',
+      amount: '',
       created: "April 11, 2021",
       due: "May 10, 2021",
       status: "current",
       lineItems: []
     });
-
   };
 
   return (
     <div>
       <p>Add item</p>
       <form onSubmit={handleSubmit}>
-        <input value={invoice.title} onChange={handleInputChange} />
+        <label htmlFor="title">Title</label>
+        <input id="title" name="title" value={invoice.title || ""} onChange={handleInputChange} />
+        <label htmlFor="desc">Description</label>
+        <input id="desc" name="desc" value={invoice.desc} onChange={handleInputChange} />
+        <label htmlFor="amount">Amount</label>
+        <input id="amount" name="amount" value={invoice.amount} onChange={handleInputChange} />
         <button>Add New Invoice</button>
       </form>
     </div>

@@ -23,16 +23,14 @@ function Invoice () {
             <td>Item No.</td>
             <td>Description</td>
             <td>Amount</td>
-            <td>Notes</td>
           </tr>
         </thead>
         <tbody>
           {invoice.lineItems.map(lineItem => <LineItem lineItem={lineItem} key={lineItem.itemNo}/> )}
           <tr>
-            <td></td>
-            <td>Total</td>
-            <td>20000</td>
-            <td></td>
+            <td>{invoice.id}</td>
+            <td>{invoice.desc}</td>
+            <td>{invoice.amount}</td>
           </tr>
         </tbody>
       </table> 
