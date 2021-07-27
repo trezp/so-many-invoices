@@ -1,6 +1,7 @@
 import React from 'react';
 
-import LineItem from '../LineItem.js';
+import InvoiceTable from '../InvoiceTable.js';
+import NewLineItemForm from '../NewLineItemForm.js';
 import {
   useParams
 } from "react-router-dom";
@@ -17,24 +18,12 @@ function Invoice () {
       <h2>{invoice.title}</h2>
       <h3>Invoice date: {invoice.created}</h3>
       <h3>Please pay by: {invoice.due}</h3>
-      <table className="line-item-table">
-        <thead>
-          <tr>
-            <td>Item No.</td>
-            <td>Description</td>
-            <td>Amount</td>
-          </tr>
-        </thead>
-        <tbody>
-          {invoice.lineItems.map(lineItem => <LineItem lineItem={lineItem} key={lineItem.itemNo}/> )}
-          <tr>
-            <td>{invoice.id}</td>
-            <td>{invoice.desc}</td>
-            <td>{invoice.amount}</td>
-          </tr>
-        </tbody>
-      </table> 
-    </li>);
+      {true ? 
+        <NewLineItemForm/>
+        : 
+        <InvoiceTable invoice={invoice} lineItems={invoice.lineItems}></InvoiceTable> }
+      
+    </li>)
 }
 
 export default Invoice;
