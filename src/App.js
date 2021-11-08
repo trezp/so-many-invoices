@@ -29,17 +29,21 @@ function App() {
     setInvoices(invoices.filter((invoice) => invoiceToBeDeleted !== invoice));
   };
 
-  useEffect(() => {
-    const invoices = JSON.parse(localStorage.getItem('invoices'));
+  // const getInvoices = () => {
+  //   const invoices = JSON.parse(localStorage.getItem('invoices'));
     
-    if (invoices) {
-      setInvoices(invoices);
-    }
-  }, [initialState]);
+  //   if (invoices) {
+  //     setInvoices(invoices);
+  //   }
+  // }
 
-  useEffect(() => {
-    localStorage.setItem('invoices', JSON.stringify(invoices));
-  }, [invoices]);
+  // const saveToLocalStorage = () => {
+  //   localStorage.setItem('invoices', JSON.stringify(invoices));
+  // }
+
+  // useEffect(getInvoices, [initialState]);
+
+  // useEffect(saveToLocalStorage, [invoices]);
 
   const handleClick = (e, invoice) => {
     e.preventDefault();
@@ -63,11 +67,11 @@ function App() {
           </header>
           <main>
             <NewInvoiceForm addInvoice={addInvoice}/>
-              <ul>
-                <Switch>
-                  <Route path="/:id" children={<Invoice />} />
-                </Switch>
-              </ul>
+            <ul>
+              <Switch>
+                <Route path="/:id" children={<Invoice/>} />
+              </Switch>
+            </ul>
           </main>
         </div>
       </Router>

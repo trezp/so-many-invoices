@@ -1,6 +1,6 @@
 import LineItem from './LineItem.js';
 
-function invoiceTable(props){
+function InvoiceTable({lineItems}){
   return (
     <table className="line-item-table">
       <thead>
@@ -8,13 +8,14 @@ function invoiceTable(props){
           <td>Item No.</td>
           <td>Description</td>
           <td>Amount</td>
+          <td>Notes</td>
         </tr>
       </thead>
       <tbody>
-        {props.lineItems.map(lineItem => <LineItem lineItem={lineItem} key={lineItem.itemNo}/> )}
+        {lineItems.map(lineItem => <LineItem lineItem={lineItem} key={lineItem.itemNo}/> )}
       </tbody>
     </table> 
   )
 }
 
-export default invoiceTable; 
+export default InvoiceTable; 
