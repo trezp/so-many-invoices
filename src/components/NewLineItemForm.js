@@ -5,15 +5,17 @@ import uniqueId from 'uniqid';
 function NewLineItemForm({invoice}) {
   const { addLineItems } = useContext(InvoiceContext);
   const [lineItem, setLineItem] = useState([]);
+  let [lineItemCount, setLineItemCount] = useState(1);
 
   const handleInputChange = (e) => {
-    e.preventDefault();
-    setLineItem({...lineItem, [e.target.name]: e.target.value, itemNo: uniqueId()});
+    e.preventDefault(); 
+    setLineItem({...lineItem, [e.target.name]: e.target.value, itemNo: lineItemCount});
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addLineItems(lineItem, invoice);
+    setLineItemCount(lineItemCount + 1);
   }
 
   return ( 
