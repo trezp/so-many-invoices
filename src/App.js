@@ -1,10 +1,10 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import Invoice from "./components/invoice/Invoice";
-import data from './invoiceDB.json';
-
+import { InvoiceContext } from './InvoiceContext';
 import NewInvoiceForm from "./components/NewInvoiceForm/NewInvoiceForm.js";
+
 
 import {
   BrowserRouter as Router,
@@ -16,34 +16,7 @@ import {
 import "./App.css";
 
 function App() {
-
-  const initialState = data;
-  const [invoices, setInvoices] = useState(initialState);
-  
-  const addInvoice = (invoice) => {
-     // assuming no duplicates for demo purposes
-    setInvoices([...invoices, invoice]);
-  };
-
-  const removeInvoice = (invoiceToBeDeleted) => {
-    setInvoices(invoices.filter((invoice) => invoiceToBeDeleted !== invoice));
-  };
-
-  // const getInvoices = () => {
-  //   const invoices = JSON.parse(localStorage.getItem('invoices'));
-    
-  //   if (invoices) {
-  //     setInvoices(invoices);
-  //   }
-  // }
-
-  // const saveToLocalStorage = () => {
-  //   localStorage.setItem('invoices', JSON.stringify(invoices));
-  // }
-
-  // useEffect(getInvoices, [initialState]);
-
-  // useEffect(saveToLocalStorage, [invoices]);
+  const { invoices, removeInvoice, addInvoice } = useContext(InvoiceContext);
 
   const handleClick = (e, invoice) => {
     e.preventDefault();
@@ -75,6 +48,7 @@ function App() {
           </main>
         </div>
       </Router>
+
     </div>
   );
 }

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import uniqueId from 'uniqid';
+import { InvoiceContext } from '../../InvoiceContext';
 import './NewInvoiceForm.css';
 
 
-function InvoiceForm({addInvoice}) {
+function InvoiceForm() {
+  const { addInvoice } = useContext(InvoiceContext);
+
   const [invoice, setInvoice] = useState({
     id: '',
     title: '',
@@ -22,8 +25,9 @@ function InvoiceForm({addInvoice}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addInvoice(invoice);
 
+    addInvoice(invoice);
+    
     setInvoice({
       id: '',
       title: '',
@@ -33,7 +37,7 @@ function InvoiceForm({addInvoice}) {
       due: "May 10, 2021",
       status: "current",
       lineItems: []
-    });
+    }); 
   };
 
   return (
