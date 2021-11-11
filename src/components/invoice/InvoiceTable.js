@@ -12,7 +12,7 @@ function InvoiceTable({lineItems}){
         </tr>
       </thead>
       <tbody>
-        {lineItems && lineItems.map(lineItem => <LineItem lineItem={lineItem} key={lineItem.itemNo}/> )}
+        {lineItems && lineItems.map(lineItem => <LineItem lineItem={lineItem}/> )}
       </tbody>
     </table> 
   )
