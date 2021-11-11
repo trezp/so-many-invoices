@@ -7,16 +7,7 @@ import './NewInvoiceForm.css';
 function InvoiceForm() {
   const { addInvoice } = useContext(InvoiceContext);
 
-  const [invoice, setInvoice] = useState({
-    id: '',
-    title: '',
-    desc: '',
-    amount: '',
-    created: "",
-    due: "",
-    status: "current",
-    lineItems: []
-  });
+  const [invoice, setInvoice] = useState({});
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -28,16 +19,7 @@ function InvoiceForm() {
 
     addInvoice(invoice);
     
-    setInvoice({
-      id: '',
-      title: '',
-      desc: '',
-      amount: '',
-      created: "",
-      due: "",
-      status: "",
-      lineItems: []
-    }); 
+    setInvoice({title: '', desc: '', amount: ''}); 
   };
 
   return (

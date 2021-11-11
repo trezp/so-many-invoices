@@ -18,7 +18,7 @@ function Invoice () {
       <h3>Invoice date: {invoice.created}</h3>
       <h3>Please pay by: {invoice.due}</h3>
       <NewLineItemForm invoice={invoice}/>
-      <InvoiceTable invoice={invoice} lineItems={invoice.lineItems}></InvoiceTable> 
+      <InvoiceTable lineItems={invoice.lineItems}></InvoiceTable> 
     </li>
   )
 }

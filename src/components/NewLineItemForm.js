@@ -12,8 +12,7 @@ function NewLineItemForm({invoice}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addLineItems(lineItem, invoice);
-    console.log(lineItem)
+    addLineItems(lineItem, invoice); 
     setLineItem({title: '', amount: '', itemNo: '', notes: ''});
   }
 

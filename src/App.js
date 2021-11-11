@@ -16,7 +16,7 @@ import {
 import "./App.css";
 
 function App() {
-  const { invoices, removeInvoice, addInvoice } = useContext(InvoiceContext);
+  const { invoices, removeInvoice } = useContext(InvoiceContext);
 
   const handleClick = (e, invoice) => {
     e.preventDefault();
@@ -31,15 +31,17 @@ function App() {
             <h1>Super Spectacular Invoicing!</h1>
             <nav>
               <ul>
-                {invoices.map(invoice => <li key={invoice.id}>
-                  <Link to={invoice.id}>{invoice.title}</Link>
-                  <button type="button" onClick={(e) => {handleClick(e,invoice)}}>X</button></li>
+                {invoices && invoices.map(invoice => 
+                  <li key={invoice.id}>
+                    <Link to={invoice.id}>{invoice.title}</Link>
+                    <button type="button" onClick={(e) => {handleClick(e,invoice)}}>X</button>
+                  </li>
                 )}
               </ul>
             </nav>
           </header>
           <main>
-            <NewInvoiceForm addInvoice={addInvoice}/>
+            <NewInvoiceForm/>
             <ul>
               <Switch>
                 <Route path="/:id" children={<Invoice/>} />
