@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import uniqueId from 'uniqid';
+import { v4 as uuid } from 'uuid';
 import { InvoiceContext } from '../../InvoiceContext';
 import './NewInvoiceForm.css';
 
@@ -12,15 +12,15 @@ function InvoiceForm() {
     title: '',
     desc: '',
     amount: '',
-    created: "April 11, 2021",
-    due: "May 10, 2021",
+    created: "",
+    due: "",
     status: "current",
     lineItems: []
   });
 
   const handleInputChange = (e) => {
     e.preventDefault();
-    setInvoice({...invoice, [e.target.name]: e.target.value, id: uniqueId()});
+    setInvoice({...invoice, [e.target.name]: e.target.value, id: uuid()});
   }
 
   const handleSubmit = (e) => {
@@ -33,9 +33,9 @@ function InvoiceForm() {
       title: '',
       desc: '',
       amount: '',
-      created: "April 11, 2021",
-      due: "May 10, 2021",
-      status: "current",
+      created: "",
+      due: "",
+      status: "",
       lineItems: []
     }); 
   };

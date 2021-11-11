@@ -1,21 +1,20 @@
 import React, { useState, useContext } from 'react';
 import { InvoiceContext } from '../InvoiceContext';
-import uniqueId from 'uniqid';
 
 function NewLineItemForm({invoice}) {
   const { addLineItems } = useContext(InvoiceContext);
   const [lineItem, setLineItem] = useState([]);
-  let [lineItemCount, setLineItemCount] = useState(1);
 
   const handleInputChange = (e) => {
     e.preventDefault(); 
-    setLineItem({...lineItem, [e.target.name]: e.target.value, itemNo: lineItemCount});
+    setLineItem({...lineItem, [e.target.name]: e.target.value});
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addLineItems(lineItem, invoice);
-    setLineItemCount(lineItemCount + 1);
+    console.log(lineItem)
+    setLineItem({title: '', amount: '', itemNo: '', notes: ''});
   }
 
   return ( 
