@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import InvoiceContextProvider from './InvoiceContext';
+import InvoiceContextProvider from './contexts/InvoiceContext';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

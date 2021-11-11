@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { useParams } from "react-router-dom";
 
-import InvoiceTable from '../InvoiceTable.js';
-import NewLineItemForm from '../NewLineItemForm.js';
-import { InvoiceContext } from '../../InvoiceContext';
+import InvoiceTable from './InvoiceTable.js';
+import NewLineItemForm from './NewLineItemForm.js';
+import { InvoiceContext } from '../../contexts/InvoiceContext';
 
 import './Invoice.css';
 

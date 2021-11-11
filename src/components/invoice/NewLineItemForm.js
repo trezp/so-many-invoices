@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { InvoiceContext } from '../InvoiceContext';
+import { InvoiceContext } from '../../contexts/InvoiceContext';
 
 function NewLineItemForm({invoice}) {
   const { addLineItems } = useContext(InvoiceContext);

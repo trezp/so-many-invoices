@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 
 import Invoice from "./components/invoice/Invoice";
-import { InvoiceContext } from './InvoiceContext';
+import { InvoiceContext } from './contexts/InvoiceContext';
 import NewInvoiceForm from "./components/NewInvoiceForm/NewInvoiceForm.js";
 
 

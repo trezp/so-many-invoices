@@ -11,7 +11,6 @@ const InvoiceContextProvider = (props) => {
   };
 
   const addLineItems = (lineItem, invoice) => {
-    console.log(invoices)
     invoices.forEach(item => {
       if(!item.lineItems) {
        item.lineItems = [];

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { v4 as uuid } from 'uuid';
-import { InvoiceContext } from '../../InvoiceContext';
+import { InvoiceContext } from '../../contexts/InvoiceContext';
 import './NewInvoiceForm.css';
 
 
