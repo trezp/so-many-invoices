@@ -45,6 +45,7 @@ function InvoiceForm(props) {
             name="title"
             value={invoice.title || ''}
             onChange={handleInputChange}
+            required
           />
           <TextField
             margin="dense"
@@ -56,6 +57,7 @@ function InvoiceForm(props) {
             name="desc"
             value={invoice.desc || ''}
             onChange={handleInputChange}
+            required
           />
         </DialogContent>
         <DialogActions>
@@ -64,21 +66,7 @@ function InvoiceForm(props) {
         </DialogActions>
       </Dialog>
     </div>
-)
-
-  // return (
-  //   <div>
-  //     <p>Add item</p>
-  //     <form onSubmit={handleSubmit}>
-  //       <label htmlFor="title">Title</label>
-  //       <input id="title" name="title" value={invoice.title || ""} onChange={handleInputChange} />
-  //       <label htmlFor="desc">Description</label>
-  //       <input id="desc" name="desc" value={invoice.desc || ""} onChange={handleInputChange} />
-  //       <button>Add New Invoice</button>
-  //     </form>
-  //   </div>
-  // );
-  
+  )
 }
 
 export default InvoiceForm; 

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useParams } from "react-router-dom";
 
 import InvoiceTable from './InvoiceTable.js';
-import NewLineItemForm from './NewLineItemForm.js';
 import { InvoiceContext } from '../../contexts/InvoiceContext';
 
 import './Invoice.css';
@@ -16,7 +15,6 @@ function Invoice () {
     <li key={invoice.id} className="invoice-list-item">
       <h2>{invoice.title}</h2>
       <h3>{invoice.desc}</h3>
-      {/* <NewLineItemForm invoice={invoice}/> */}
       <InvoiceTable lineItems={invoice.lineItems} invoice={invoice}></InvoiceTable> 
     </li>
   )

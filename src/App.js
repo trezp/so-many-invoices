@@ -41,7 +41,7 @@ function App() {
           <main>
             <Button variant="outlined" onClick={handleClickOpen}>Add New Invoice</Button>
             <NewInvoiceForm open={open} setOpen={setOpen} handleClose={handleClose}/>
-            {invoices.length > 0 && <InvoiceList/>}
+            {invoices && <InvoiceList/>}
             <ul>
               <Switch>
                 <Route exact path="/:id" children={<Invoice/>} />
@@ -50,7 +50,6 @@ function App() {
           </main>
         </div>
       </Router>
-
     </div>
   );
 }
