@@ -1,13 +1,9 @@
 
-import React, { useContext } from 'react';
-import Button from '@mui/material/Button';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 
+import Home from "./components/Home";
 import Invoice from "./components/invoice/Invoice";
-import InvoiceList from './components/invoice/InvoiceList';
-import { InvoiceContext } from './contexts/InvoiceContext';
-import NewInvoiceForm from "./components/NewInvoiceForm/NewInvoiceForm.js";
-
 
 import {
   BrowserRouter as Router,
@@ -19,17 +15,6 @@ import {
 import "./App.css";
 
 function App() {
-  const { invoices } = useContext(InvoiceContext);
-  const [open, setOpen] = React.useState(false);
-  
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   return (
     <div className="app-container">
       <Router>
@@ -39,12 +24,12 @@ function App() {
             <Link to="/">Home</Link>
           </header>
           <main>
-            <Button variant="outlined" onClick={handleClickOpen}>Add New Invoice</Button>
-            <NewInvoiceForm open={open} setOpen={setOpen} handleClose={handleClose}/>
-            {invoices && <InvoiceList/>}
             <ul>
               <Switch>
-                <Route exact path="/:id" children={<Invoice/>} />
+                <Route path="/:id" children={<Invoice/>} />
+                <Route path="/">
+                  <Home />
+                </Route>
               </Switch>
             </ul>
           </main>
