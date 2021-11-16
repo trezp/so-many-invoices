@@ -16,9 +16,7 @@ function InvoiceForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     addInvoice(invoice);
-    
     setInvoice({title: '', desc: '', amount: ''}); 
   };
 

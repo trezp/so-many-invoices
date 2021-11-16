@@ -3,9 +3,7 @@ export const InvoiceContext = createContext();
 
 const InvoiceContextProvider = (props) => {
   const [invoices, setInvoices] = useState([]);
-
-  const [lineItemNo, setLineItemNo] = useState(1);
-
+  
   const addInvoice = (invoice) => {
     setInvoices([...invoices, invoice]);
   };
@@ -17,12 +15,8 @@ const InvoiceContextProvider = (props) => {
       } 
 
       if(item.id === invoice.id){
-          item.lineItems.push(lineItem);
-          setLineItemNo(item.lineItems.length + 1);
-          lineItem.itemNo = lineItemNo;
-      } else {
-        console.log("not found")
-      }
+        item.lineItems.push(lineItem);
+      } 
     });
     setInvoices([...invoices])
   }
