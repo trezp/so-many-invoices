@@ -21,19 +21,15 @@ function NewLineItemForm({invoice}) {
   }
 
   return ( 
-    <div>
-      <p>Add a line item</p>
-      <form onSubmit={handleSubmit}>
-        <input type="hidden" id="id" name="id" value={lineItem.id} />
-        <label htmlFor="title">Description</label>
-        <input id="title" name="title" value={lineItem.title} onChange={handleInputChange} />
-        <label htmlFor="amount">Amount</label>
-        <input id="amount" name="amount" value={lineItem.amount} onChange={handleInputChange} />
-        <label htmlFor="amount">Notes</label>
-        <input id="notes" name="notes" value={lineItem.notes} onChange={handleInputChange} />
+    <form onSubmit={handleSubmit}>
+      <tr key={invoice.id}>
+        <td></td>
+        <td><input id="title" name="title" value={lineItem.title} onChange={handleInputChange} /></td>
+        <td><input id="amount" name="amount" value={lineItem.amount} onChange={handleInputChange} /></td>
+        <td><input id="notes" name="notes" value={lineItem.notes} onChange={handleInputChange} /></td>
         <button>Add Item</button>
-      </form>
-    </div>
+      </tr>
+    </form>
   )
 }
 

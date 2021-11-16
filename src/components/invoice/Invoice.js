@@ -15,10 +15,9 @@ function Invoice () {
   return (
     <li key={invoice.id} className="invoice-list-item">
       <h2>{invoice.title}</h2>
-      <h3>Invoice date: {invoice.created}</h3>
-      <h3>Please pay by: {invoice.due}</h3>
-      <NewLineItemForm invoice={invoice}/>
-      <InvoiceTable lineItems={invoice.lineItems}></InvoiceTable> 
+      <h3>{invoice.desc}</h3>
+      {/* <NewLineItemForm invoice={invoice}/> */}
+      <InvoiceTable lineItems={invoice.lineItems} invoice={invoice}></InvoiceTable> 
     </li>
   )
 }
