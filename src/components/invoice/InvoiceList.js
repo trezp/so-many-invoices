@@ -16,7 +16,7 @@ const InvoiceList = () => {
   }
 
   return (
-    <List>
+    <List className="invoice-list">
       {invoices && invoices.map(invoice => 
         <ListItem disablepadding key={invoice.id}>
           <Link to={invoice.id}>

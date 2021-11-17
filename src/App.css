@@ -2,3 +2,35 @@
   width: 80%;
   margin: auto;
 }
+
+.header {
+  background: navy;
+}
+
+.header-content {
+  padding: 1em;
+  color: white;
+  width: 80%;
+  margin: auto;
+}
+
+.invoice-container svg {
+  vertical-align: middle;
+  line-height: 2;
+}
+
+.invoice-container a {  
+  display: block;
+  font-size: 1.2em;
+  color: black;
+  padding: 15px 0;
+  margin-top: 15px;
+}
+
+.invoice-container a:hover {
+  color: orangered;
+}
+
+.invoice-list {
+  width: 50%;
+}
